@@ -1,0 +1,12 @@
+div.ant-select-selector {
+    position: relative;
+    height: 59px !important;
+}
+
+.ant-select-selector .ant-select-selection-item {
+    position: absolute;
+    top: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+}
