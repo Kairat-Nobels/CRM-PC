@@ -39,6 +39,9 @@ const Footer = () => {
                             <NavLink to='/catalog' className='footer__link'
                                      activeClassName='footer__link-active'>Каталог</NavLink>
                         </li>
+                           <li className='footer__list-element'>
+                            <NavLink to='/repair' className='footer__link' activeClassName='footer__link-active'>Ремонт</NavLink>
+                        </li>
                     </ul>
 
                     <div className="footer__contacts">

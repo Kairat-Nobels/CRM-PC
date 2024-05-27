@@ -45,6 +45,11 @@ import Purchases from "./containers/Purchases/Purchases";
 import ReportZ from "./containers/ReportZ/ReportZ";
 import Reports from "./containers/Reports/Reports";
 import ScrollToTop from "./utils/ScrollToTop";
+import RepairPage from "./containers/RepairPage/RepairPage";
+import AdminRepair from "./containers/AdminRepair/AdminRepair";
+import AdminEditRepairOrder from "./containers/AdminEditRepairOrder/AdminEditRepairOrder";
+import AdminCallRepair from "./containers/AdminCallRepair/AdminCallRepair";
+import EditTechnicianCall from "./containers/EditTechnicianCall/EditTechnicianCall";
 
 const ProtectedRoute = ({isAllowed, redirectTo, ...props}) => {
     return isAllowed ? <Route {...props} /> : <Redirect to={redirectTo?redirectTo:'/'}/>;
@@ -108,6 +113,7 @@ const App = () => {
                 <Route path="/order-place/success" exact component={SuccessOrderPlace}/>
                 <Route path="/news/:id" component={NewsInfo}/>
                 <Route path="/contacts" component={Contacts}/>
+                <Route path="/repair" component={RepairPage}/>
                 <Route path="/search" component={SearchPage}/>
                 <Route path="/forgot-password" exact component={ForgotPassword}/>
                 <Route path="/reset-password/:id/:token" exact component={ResetPassword}/>
@@ -193,6 +199,30 @@ const App = () => {
                     path="/admin/products"
                     exact
                     component={AdminProducts}
+                />
+                <ProtectedRoute
+                    isAllowed={user?.role==='admin'}
+                    path="/admin/repair/edit/:id"
+                    exact
+                    component={AdminEditRepairOrder}
+                />
+                <ProtectedRoute
+                    isAllowed={user?.role==='admin'}
+                    path="/admin/repair"
+                    exact
+                    component={AdminRepair}
+                />
+                <ProtectedRoute
+                    isAllowed={user?.role==='admin'}
+                    path="/admin/call-repair/edit/:id"
+                    exact
+                    component={EditTechnicianCall}
+                />
+                <ProtectedRoute
+                    isAllowed={user?.role==='admin'}
+                    path="/admin/call-repair"
+                    exact
+                    component={AdminCallRepair}
                 />
 
                 <ProtectedRoute

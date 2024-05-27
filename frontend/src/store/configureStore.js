@@ -1,25 +1,29 @@
-import {combineReducers} from "redux";
-import {loadFromLocalStorage, saveToLocalStorage} from "./localStorage";
-import axiosApi from "../axiosApi";
-import {configureStore} from "@reduxjs/toolkit";
-import usersSlice from "./slices/usersSlice";
-import thunk from "redux-thunk";
-import categoriesSlice from "./slices/categoriesSlice";
-import productsSlice from "./slices/productsSlice";
-import cashiersSlice from "./slices/cashiersSlice";
-import newsSlice from "./slices/newsSlice";
-import ordersSlice from "./slices/ordersSlice";
-import cartSlice from "./slices/cartSlice";
-import shiftsSlice from "./slices/shiftsSlice";
-import cashboxSlice from "./slices/cashboxSlice";
-import cashSlice from "./slices/cashSlice";
-import contactsSlice from "./slices/contactsSlice";
-import adminSlice from "./slices/adminSlice";
-import clientsSlice from "./slices/clientsSlice";
-import operationsSlice from "./slices/operationsSlice";
-import appSlice from "./slices/appSlice";
+import { combineReducers } from 'redux';
+import { loadFromLocalStorage, saveToLocalStorage } from './localStorage';
+import axiosApi from '../axiosApi';
+import { configureStore } from '@reduxjs/toolkit';
+import usersSlice from './slices/usersSlice';
+import thunk from 'redux-thunk';
+import categoriesSlice from './slices/categoriesSlice';
+import productsSlice from './slices/productsSlice';
+import cashiersSlice from './slices/cashiersSlice';
+import newsSlice from './slices/newsSlice';
+import ordersSlice from './slices/ordersSlice';
+import cartSlice from './slices/cartSlice';
+import shiftsSlice from './slices/shiftsSlice';
+import cashboxSlice from './slices/cashboxSlice';
+import cashSlice from './slices/cashSlice';
+import contactsSlice from './slices/contactsSlice';
+import adminSlice from './slices/adminSlice';
+import clientsSlice from './slices/clientsSlice';
+import operationsSlice from './slices/operationsSlice';
+import appSlice from './slices/appSlice';
+import repairOrdersReducer from './slices/repairOrdersSlice';
+import repairCallsReducer from './slices/repairCallsSlice';
 
 const rootReducer = combineReducers({
+    repairOrders: repairOrdersReducer,
+    repairCalls: repairCallsReducer,
     users: usersSlice.reducer,
     categories: categoriesSlice.reducer,
     products: productsSlice.reducer,
@@ -46,7 +50,6 @@ const store = configureStore({
     devTools: true,
     preloadedState: persistedState,
 });
-
 
 store.subscribe(() => {
     saveToLocalStorage({
@@ -76,7 +79,7 @@ axiosApi.interceptors.request.use(config => {
 
 axiosApi.interceptors.response.use(res => res, e => {
     if (!e.response.data) {
-        e.response = {data: {global: 'No internet!'}};
+        e.response = { data: { global: 'No internet!' } };
     }
 
     throw e;

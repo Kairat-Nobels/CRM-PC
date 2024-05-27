@@ -436,6 +436,8 @@ const AdminOrCashierMenu = ({user}) => {
                     <MenuItem onClick={handleClose} component={Link} to={"/admin"}>Главная</MenuItem>
                     <MenuItem onClick={handleClose} component={Link} to={"/admin/categories"}>Категории</MenuItem>
                     <MenuItem onClick={handleClose} component={Link} to={"/admin/products"}>Номенклатура</MenuItem>
+                    <MenuItem onClick={handleClose} component={Link} to={"/admin/repair"}>Ремонт</MenuItem>
+                    <MenuItem onClick={handleClose} component={Link} to={"/admin/call-repair"}>Вызов ремонтника</MenuItem>
                     <MenuItem onClick={handleClose} component={Link} to={"/admin/cashiers"}>Кассиры</MenuItem>
                     <MenuItem onClick={handleClose} component={Link} to={"/admin/clients"}>Клиенты</MenuItem>
                     <MenuItem onClick={handleClose} component={Link} to={"/admin/news"}>Новости</MenuItem>

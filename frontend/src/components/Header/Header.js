@@ -239,6 +239,9 @@ const Header = () => {
                             <NavLink to='/catalog' className='header__link'
                                      activeClassName='header__link-active'>Каталог</NavLink>
                         </li>
+                        <li className='header__list-element'>
+                            <NavLink to='/repair' className='header__link' activeClassName='header__link-active'>Ремонт</NavLink>
+                        </li>
                         {/* <li className='header__list-element'>
                             <SearchIcon style={{cursor: 'pointer'}} onClick={onSearchClick}/>
                         </li> */}
