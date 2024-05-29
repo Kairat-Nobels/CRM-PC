@@ -83,6 +83,9 @@
 
       &__list {
          margin: 20px;
+         flex-wrap: wrap;
+         justify-content: space-around;
+         gap: 10px;
       }
 
       &__contacts {

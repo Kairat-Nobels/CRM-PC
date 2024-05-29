@@ -63,7 +63,10 @@ const RepairPage = () => {
             <FormControlLabel value="admin-call" control={<Radio />} label="Вызов ремонтника ПК" />
           </RadioGroup>
         </FormControl>
-        <Stack component="form" onSubmit={handleSubmit} spacing={2} sx={{ width: '50%', margin: '0 auto' }}>
+        <Stack component="form" onSubmit={handleSubmit} spacing={2} sx={{
+            width: { xs: '100%', md: '50%' },
+            margin: '0 auto',
+          }}>
           <TextField label="Имя" value={name} onChange={(e) => setName(e.target.value)} required />
           <TextField label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           <TextField label="Телефон" value={phone} onChange={(e) => setPhone(e.target.value)} required />

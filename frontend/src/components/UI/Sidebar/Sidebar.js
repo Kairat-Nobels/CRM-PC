@@ -53,6 +53,9 @@ const Sidebar = () => {
                         <Link to="/catalog" onClick={showSidebar}>
                             <li>Каталог</li>
                         </Link>
+                        <Link to='/repair' onClick={showSidebar}>
+                            <li>Ремонт</li>
+                        </Link>
                     </ul>
                     <div className="sidebar__contacts">
                         <p>{contacts?.phone[0]}</p>
