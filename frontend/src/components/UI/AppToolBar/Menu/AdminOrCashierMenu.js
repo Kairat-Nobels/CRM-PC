@@ -404,6 +404,9 @@ const AdminOrCashierMenu = ({user}) => {
                     <Button component={Link} to={`/admin/orders`} sx={{color: "#fff !important"}}>
                         Заказы
                     </Button>
+                    <Button component={Link} to={`/admin/faq`} sx={{color: "#fff !important"}}>
+                        FAQ
+                    </Button>
                 </Grid>
 
                 <Grid item display="flex" flexDirection="column">

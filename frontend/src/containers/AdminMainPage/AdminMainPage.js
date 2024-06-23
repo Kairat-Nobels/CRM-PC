@@ -120,7 +120,7 @@ const AdminMainPage = () => {
     }
 
     return (
-        <Grid container>
+        <Grid style={{justifyContent: 'center', gap: '20px'}} container>
             <Grid item xs={6} className={classes.boxScrolling}>
                 <MUIDataTable
                     title={"Список смен"}

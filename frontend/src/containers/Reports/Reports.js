@@ -118,7 +118,7 @@ const Reports = () => {
             <Box display='flex' justifyContent='space-between' marginY='20px'>
                 <Typography variant='h5'></Typography>
 
-                <Box display='flex' alignItems='stretch'>
+                <Box display='flex' alignItems='stretch' style={{gap: '10px'}}>
                     <LocalizationProvider locale={ru} dateAdapter={AdapterDateFns}>
                         <DatePicker
                             label="от"

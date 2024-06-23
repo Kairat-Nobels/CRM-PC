@@ -50,6 +50,7 @@ import AdminRepair from "./containers/AdminRepair/AdminRepair";
 import AdminEditRepairOrder from "./containers/AdminEditRepairOrder/AdminEditRepairOrder";
 import AdminCallRepair from "./containers/AdminCallRepair/AdminCallRepair";
 import EditTechnicianCall from "./containers/EditTechnicianCall/EditTechnicianCall";
+import AdminFaq from "./containers/AdminFaq/AdminFaq";
 
 const ProtectedRoute = ({isAllowed, redirectTo, ...props}) => {
     return isAllowed ? <Route {...props} /> : <Redirect to={redirectTo?redirectTo:'/'}/>;
@@ -223,6 +224,12 @@ const App = () => {
                     path="/admin/call-repair"
                     exact
                     component={AdminCallRepair}
+                />
+                <ProtectedRoute
+                    isAllowed={user?.role==='admin'}
+                    path="/admin/faq"
+                    exact
+                    component={AdminFaq}
                 />
 
                 <ProtectedRoute
